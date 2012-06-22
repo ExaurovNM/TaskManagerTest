@@ -1,0 +1,18 @@
+﻿@using TaskManagerTest.Models
+@model IQueryable<Tasks>
+
+
+
+<ul>@foreach (TaskManagerTest.Models.Tasks task in Model)
+    {
+        <li>
+            <b> @task.Title  </b>
+            <br> @task.Subject 
+            <br> @Html.ActionLink("Edit","Edit",new {id = task.id}) 
+            |  @Html.ActionLink("Delete","Delete",new {id = task.id}) 
+        </li>
+    
+    }
+</ul>
+
+@Html.ActionLink("Add new task","Add")
